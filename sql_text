@@ -1,0 +1,24 @@
+-- Table: public.users
+
+-- DROP TABLE public.users;
+
+CREATE TABLE public.users
+(
+  username character varying(40) NOT NULL,
+  firstname character varying(40) NOT NULL,
+  lastname character varying(40) NOT NULL,
+  email character varying(40) NOT NULL,
+  password character varying(40) NOT NULL,
+  sex character varying(1) NOT NULL,
+  age integer,
+  height double precision,
+  weight double precision,
+  bmi double precision,
+  CONSTRAINT users_pkey PRIMARY KEY (username),
+  CONSTRAINT users_email_key UNIQUE (email)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.users
+  OWNER TO student;
